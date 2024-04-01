@@ -1,4 +1,7 @@
 import 'package:asroo_store/core/app/upload_image/model/upload_image_response.dart';
+import 'package:asroo_store/features/admin/dashboard/data/models/categories_number_response.dart';
+import 'package:asroo_store/features/admin/dashboard/data/models/porducts_number_response.dart';
+import 'package:asroo_store/features/admin/dashboard/data/models/user_number_response.dart';
 import 'package:asroo_store/features/auth/data/models/login_response.dart';
 import 'package:asroo_store/features/auth/data/models/sign_up_response.dart';
 import 'package:asroo_store/features/auth/data/models/user_role_response.dart';
@@ -31,4 +34,20 @@ abstract class ApiService {
   Future<SignUpResponse> signUp(
     @Body() Map<String, dynamic> mutation,
   );
+
+
+    @GET(graphql)
+  Future<ProductsNumberResponse> numbersOfProduct(
+    @Body() Map<String, dynamic> query,
+  );
+
+      @GET(graphql)
+  Future<CategoriesNumberResponse> numbersOfCategories(
+    @Body() Map<String, dynamic> query,
+  );
+        @GET(graphql)
+  Future<UsersNumberResponse> numbersofUsers(
+    @Body() Map<String, dynamic> query,
+  );
+
 }
