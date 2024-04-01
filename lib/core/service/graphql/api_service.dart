@@ -36,16 +36,16 @@ abstract class ApiService {
   );
 
 
-    @GET(graphql)
+    @POST(graphql)
   Future<ProductsNumberResponse> numbersOfProduct(
     @Body() Map<String, dynamic> query,
   );
 
-      @GET(graphql)
+      @POST(graphql)
   Future<CategoriesNumberResponse> numbersOfCategories(
     @Body() Map<String, dynamic> query,
   );
-        @GET(graphql)
+        @POST(graphql)
   Future<UsersNumberResponse> numbersofUsers(
     @Body() Map<String, dynamic> query,
   );

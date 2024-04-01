@@ -5,47 +5,37 @@ import 'package:asroo_store/features/admin/dashboard/data/models/porducts_number
 import 'package:asroo_store/features/admin/dashboard/data/models/user_number_response.dart';
 
 class DashBoardRepo {
-  DashBoardRepo(this._dataSource);
+  const DashBoardRepo(this._dataSource);
 
   final DashBoardDataSource _dataSource;
 
-  //Get Numbers Of Products
-
+  // Get Numbers Of Products
   Future<ApiResult<ProductsNumberResponse>> numberOfProducts() async {
     try {
       final response = await _dataSource.numberOfProducts();
       return ApiResult.success(response);
-    } catch (e) {
-
-return const ApiResult.failure('Please, try agian we have error');
-
+    } catch (error) {
+      return const ApiResult.failure('Please, try again we have error');
     }
   }
 
-  //Get Numbers Of Categories
-Future<ApiResult<CategoriesNumberResponse>>  numberOfCategories() async {
-
+  // Get Numbers Of Categories
+  Future<ApiResult<CategoriesNumberResponse>> numberOfCategories() async {
     try {
       final response = await _dataSource.numberOfCategories();
       return ApiResult.success(response);
-    } catch (e) {
-
-return const ApiResult.failure('Please, try agian we have error');
-
+    } catch (error) {
+      return const ApiResult.failure('Please, try again we have error');
     }
-    
   }
-  //Get Numbers Of Users
-Future<ApiResult<UsersNumberResponse>>  numberOfUsers() async {
 
+  // Get Numbers Of users
+  Future<ApiResult<UsersNumberResponse>> numberOfUsers() async {
     try {
       final response = await _dataSource.numberOfUsers();
       return ApiResult.success(response);
-    } catch (e) {
-
-return const ApiResult.failure('Please, try agian we have error');
-
+    } catch (error) {
+      return const ApiResult.failure('Please, try again we have error');
     }
-
   }
 }

@@ -140,7 +140,7 @@ class _ApiService implements ApiService {
     _data.addAll(query);
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<ProductsNumberResponse>(Options(
-      method: 'GET',
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
@@ -169,7 +169,7 @@ class _ApiService implements ApiService {
     _data.addAll(query);
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<CategoriesNumberResponse>(Options(
-      method: 'GET',
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
@@ -197,7 +197,7 @@ class _ApiService implements ApiService {
     _data.addAll(query);
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<UsersNumberResponse>(Options(
-      method: 'GET',
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
